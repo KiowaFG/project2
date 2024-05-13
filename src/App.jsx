@@ -13,9 +13,12 @@ function App() {
     <>
       <Navbar/>
       <HomePage/>
+      
+      <Routes>
       <Route path='/' element={<HomePage/>} ></Route>
       <Route path='/all-games' element={<Games/>}></Route>
       <Route path='/favorites' element={<Favorites/>}></Route>
+      </Routes>
     </>
   )
 }

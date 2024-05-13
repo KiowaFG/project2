@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Logo from "../assets/GameQuest.jpg"
 
 const Navbar = () => {
   return (
     <div className="navbar">
       <Link to={"/"}>
-        <img className="logo" src={logo} alt="logo-img" />
+        
+        <img className="logo" src={Logo} alt="" />
       </Link>
       <ul className="navbarUl">
         <Link to="/all-games">
