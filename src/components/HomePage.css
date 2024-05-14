@@ -1,0 +1,28 @@
+.backgroundImage{
+    background-image: url("../assets/gaming-background.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(154, 154, 154);
+    background-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    }
+    
+    .backgroundImage .Title{
+        height: 10vh;
+    }
+    
+    .Title{
+        color: white;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .mainTitle{
+        font-size: 50px;
+    }
+    

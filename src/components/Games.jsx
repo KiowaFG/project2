@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./Games.css"
 
 
+
 function Games() {
   const [games, setGames] = useState([])
 
@@ -26,21 +27,29 @@ function Games() {
 
   return (
     <>
+    <div className="cardContainer">
       {
+        
+          
         games.map((game) => {
           return (
+            
             <div className="card">
               <img className="cardImage" src={game.image_url} alt="" />
-              <h2>{game.name}</h2>
+              <p>{game.name}</p>
               <p>{game.user_review}</p>
+              <img src="" alt="" />
             </div>
+            
 
 
 
           )
 
         })
+        
       }
+      </div>
 
     </>
   )

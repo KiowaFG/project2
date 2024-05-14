@@ -17,7 +17,10 @@ const Navbar = () => {
           <li>Favorites</li>
         </Link>
         <Link to="/about-me">
-          <li>About me</li>
+          <li>My hall of fame</li>
+        </Link>
+        <Link to="/game">
+          <li>Where it all started</li>
         </Link>
       </ul>
     </div>
