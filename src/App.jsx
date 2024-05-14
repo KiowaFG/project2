@@ -6,6 +6,7 @@ import HomePage from './components/HomePage';
 import Games from "./components/Games"
 import Favorites from "./components/Favorites"
 import HallOfFame from './components/HallOfFame';
+import AddGame from './components/AddGame';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path='/all-games' element={<Games/>}></Route>
       <Route path='/favorites' element={<Favorites/>}></Route>
       <Route path='/halloffame' element={<HallOfFame/>}></Route>
+      <Route path='/addgame' element={<AddGame/>}></Route>
       </Routes>
     </>
   )

@@ -40,10 +40,6 @@ function Games() {
               <p>{game.user_review}</p>
               <img src="" alt="" />
             </div>
-            
-
-
-
           )
 
         })

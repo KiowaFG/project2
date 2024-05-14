@@ -11,7 +11,7 @@ const handleButton = async () => {
     return (
 <>
       <div className="backgroundImage">
-        <h1 className="Title mainTitle">The videogameHub</h1>
+        <h1 className="Title">The videogameHub</h1>
         <div className="perks">
 
         </div>

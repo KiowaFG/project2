@@ -39,8 +39,55 @@ ul {
 }
 
 
-.navbarUl li:hover{
+/* .navbarUl li:hover{
     background-color: rgb(0, 188, 198);
     transition: 400ms;
+} */
+
+
+.navbarLi {
+    background: transparent;
+    border: none;
+    display: block;
+    font-size: 20px;
+    outline: none;
+    position: relative;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+
+.navbarLi:before {
+    content: '';
+    border-bottom: 3px solid rgb(0, 188, 198);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    transition: 0.3s;
+    
+}
+
+
+.navbarLi:hover:before {
+    width: calc(100% - 20px);
+    padding: 0;
+}
+
+
+.navbarLi :active {
+    background: black;
+    color: white;
+    transition: none;
+}
+
+.buttons {
+    padding-top: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
