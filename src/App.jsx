@@ -7,6 +7,7 @@ import Games from "./components/Games"
 import Favorites from "./components/Favorites"
 import HallOfFame from './components/HallOfFame';
 import AddGame from './components/AddGame';
+import Details from "./components/Details";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path='/favorites' element={<Favorites/>}></Route>
       <Route path='/halloffame' element={<HallOfFame/>}></Route>
       <Route path='/addgame' element={<AddGame/>}></Route>
+      <Route path="/games/:gamesid" element={<Details />} />
       </Routes>
     </>
   )

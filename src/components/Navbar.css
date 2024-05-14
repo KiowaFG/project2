@@ -7,12 +7,15 @@
     justify-content: space-between;
     font-family: Arrow;
     background-color: rgb(3, 3, 41);
+    border-bottom:1px solid #00ddff;
+    margin-bottom: 50px;
 
 }
 
 .logo{
     width: 100px;
     cursor: pointer;
+    padding-left: 20px;
 }
 
 ul {
@@ -59,7 +62,7 @@ ul {
 
 .navbarLi:before {
     content: '';
-    border-bottom: 3px solid rgb(0, 188, 198);
+    border-bottom: 3px solid #00ddff;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -67,7 +70,7 @@ ul {
     margin: 0 auto;
     width: 0;
     transition: 0.3s;
-    
+
 }
 
 

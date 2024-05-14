@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./AddGame.css"
+import supabase from "../supabase/config";
 
 function AddGame() {
   const [formData, setFormData] = useState({
@@ -20,9 +21,26 @@ function AddGame() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    const {data,error} = await supabase.from("games").insert([formData])
+    if (error){
+        console.log(error)
+        return
+        
+    }
+    else{
+        console.log("game created")
+        setFormData({
+            name: "",
+            platform: "",
+            release_date: "",
+            summary: "",
+            meta_score: "",
+            user_review: "",
+            image_url: "",
+          })
+    }
  
   };
 
