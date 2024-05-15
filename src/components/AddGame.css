@@ -1,3 +1,9 @@
+.backgroundDeco{
+    background-color: #030329;
+opacity: 0.9;
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #030329 17px ), repeating-linear-gradient( #28245a55, #28245a );
+}
+
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -43,7 +49,7 @@ form {
     color: black;
   }
   
-  button[type="submit"] {
+  .formSubmit[type="submit"] {
     font-size: 16px;
     color: #fff;
     background-color: #b51f1f;
@@ -54,6 +60,8 @@ form {
     transition: background-color 0.4s ease;
   }
   
-  button[type="submit"]:hover {
+  .formSubmit[type="submit"]:hover {
     background-color: #34e0fb; 
   }
+
+  

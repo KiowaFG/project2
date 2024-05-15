@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AddGame.css"
 import supabase from "../supabase/config";
 
-function AddGame() {
+function UpdateGame() {
   const [formData, setFormData] = useState({
     name: "",
     platform: "",
@@ -45,8 +45,6 @@ function AddGame() {
   };
 
   return (
-    <>
-    <div className="backgroundDeco">
     <form onSubmit={handleSubmit}>
       <label>
         Name:
@@ -112,9 +110,7 @@ function AddGame() {
       </label>
       <button className="formSubmit" type="submit">Submit</button>
     </form>
-    </div>
-    </>
   );
 }
 
-export default AddGame;
+export default UpdateGame;

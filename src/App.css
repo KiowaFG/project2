@@ -4,15 +4,22 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'GamingFontBody';
+    src: url('./assets/EmotionEngine-8ynA.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 *{
     padding: 0;
     margin: 0;
     color: white;
+    font-family: "GamingFontBody";
  
 }
 
 body{
-    background-color: rgb(3, 3, 41);
+    background-color: #030329;
     
 }

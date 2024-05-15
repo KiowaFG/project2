@@ -1,6 +1,7 @@
 import supabase from "../supabase/config"
 import { useEffect, useState } from "react";
 import "./Games.css"
+import GameDetails from "./Details";
 
 
 
@@ -20,10 +21,11 @@ function Games() {
   }
 
   const displayDetailsModal = () => {
-    document.querySelector(".details-modal").style.visibility = "visible";
+
   }
   const hideDetailsModal = () => {
-    document.querySelector(".details-modal").style.visibility = "hidden";
+    setSelectedGame(null)
+
   }
 
   useEffect(() => {
@@ -32,34 +34,37 @@ function Games() {
 
   return (
     <>
-    
-      <div className="cardContainer">
-        {
+      <div className="spacingNavbar">
+        <div className="cardContainer">
+          {
 
 
-          games.map((game) => {
-            return (
-              <>
+            games.map((game) => {
+              return (
+
                 <div key={game.id} onClick={() => {
                   setSelectedGame(game)
                   displayDetailsModal()
                 }
                 } className="card">
                   <img className="cardImage" src={game.image_url} alt="" />
-                  <p>{game.name}</p>
-                  <p>{game.user_review}</p>
+                  <p className="gameName">{game.name}</p>
+                  <div className="reviewCircle">
+                    <p className="review">{game.user_review}</p>
+                  </div>
                   <img src="" alt="" />
                 </div>
-                {selectedGame && <>{/* the component goes here with the props of the game */}</>}
-              </>
-            )
 
-          })
+              )
 
-        }
+            })
+
+          }
+        </div>
+        <div className="cardBlur">
+        {selectedGame && <div className="details-modal" onClick={hideDetailsModal}><GameDetails getGames={getGames} selectedGame={selectedGame} />  </div>}
+        </div>
       </div>
-      <div className="details-modal" onClick={hideDetailsModal}></div>
-      
 
     </>
   )
