@@ -5,8 +5,9 @@
     box-sizing: border-box;
     justify-content: space-between;
     height: 100%;
-    z-index: 2;
+    z-index: 235;
     position: absolute;
+    width: 100%;
     
 }
 
@@ -24,8 +25,8 @@
     height: 200px;
     overflow: hidden;
     overflow-y: scroll;
-    background-color: #9898ff;
-
+    background-color: #22225d;
+    margin-top: 30px;
 
 }
 
@@ -77,11 +78,9 @@
     margin-bottom: 10px;
 }
 
-
-
-.backgroundBlur {
-    
-
-    backdrop-filter: blur(5px);
-
+.cardImg{
+    border-radius: 10px;
 }
+
+
+

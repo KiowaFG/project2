@@ -1,0 +1,44 @@
+.footer{
+    width: 100vw;
+    height: 120px;
+    background-color: #030329;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top:1px solid #00ddff;
+    
+
+}
+
+.footerBtn{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.socialBtn:hover{
+    transform: scale(1.06);
+    cursor: pointer;
+}
+.socialBtn{
+    width: 30px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    
+}
+
+.logoFooter{
+display: flex;
+justify-content: left;
+}
+
+.footer-paragraph {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+

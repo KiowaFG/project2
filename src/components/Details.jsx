@@ -4,10 +4,16 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import supabase from "../supabase/config";
 import "./Details.css"
+import UpdateGame from "./UpdateGame";
 
 
 
-function GameDetails({ selectedGame, getGames }) {
+
+
+function GameDetails({ selectedGame, getGames, hideDetailsModal }) {
+
+    const [editMode, setEditMode]= useState(false)
+
 
 
     const deleteGame = async () => {
@@ -43,7 +49,11 @@ function GameDetails({ selectedGame, getGames }) {
         <>
             <div className="backgroundBlur">
                 <div className="cardBorder">
+                    <div></div>
                     <div className="gameDetailsCard">
+                        { editMode ? <UpdateGame hideDetailsModal={hideDetailsModal} getGames={getGames} selectedGame={selectedGame} setEditMode={setEditMode}/> :
+
+                            <>
                         <div className="halfCard1">
                             <img className="cardImg" src={selectedGame.image_url} alt="" />
                             <h3 className="cardtitle">{selectedGame.name}</h3>
@@ -54,10 +64,16 @@ function GameDetails({ selectedGame, getGames }) {
                         <div className="halfCard2">
                             <p className="cardSummary">Summary: {selectedGame.summary}</p>
                             <div className="buttons">
-                                <button className="edit">Edit</button>
+                                <button className="edit" onClick={()=>setEditMode(true)}>Edit</button>
                                 <button onClick={deleteGame} className="delete">Delete</button>
                             </div>
                         </div>
+                        </>
+
+                        }
+                        
+
+
                     </div>
                 </div>
             </div>
@@ -69,3 +85,4 @@ function GameDetails({ selectedGame, getGames }) {
 }
 
 export default GameDetails
+

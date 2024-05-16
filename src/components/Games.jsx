@@ -2,6 +2,9 @@ import supabase from "../supabase/config"
 import { useEffect, useState } from "react";
 import "./Games.css"
 import GameDetails from "./Details";
+import estrella from "../assets/estrellablanca.png"
+import Favorites from "./Favorites";
+import yellowStar from "../assets/estrella1.png"
 
 
 
@@ -11,7 +14,7 @@ function Games() {
   const [selectedGame, setSelectedGame] = useState(null);
 
   const getGames = async () => {
-    const { data, error } = await supabase.from("games").select()
+    const { data, error } = await supabase.from("games").select().order("user_review",{ascending:false})
     if (data) {
       console.log("The data is here! ", data);
       setGames(data);
@@ -27,6 +30,15 @@ function Games() {
     setSelectedGame(null)
 
   }
+  const handleFavorite = async (e,id, Favorite)=>{
+    e.stopPropagation()
+    const { data, error } = await supabase.from("games").update({Favorite: !Favorite}).eq('id', id)
+    if(error)
+    console.log(error)
+  getGames()
+  }
+
+  
 
   useEffect(() => {
     getGames()
@@ -37,8 +49,6 @@ function Games() {
       <div className="spacingNavbar">
         <div className="cardContainer">
           {
-
-
             games.map((game) => {
               return (
 
@@ -47,6 +57,7 @@ function Games() {
                   displayDetailsModal()
                 }
                 } className="card">
+                  <img  onClick={(e)=>handleFavorite (e,game.id, game.Favorite)} className="starImage" src={(game.Favorite) ? yellowStar : estrella} alt="" />
                   <img className="cardImage" src={game.image_url} alt="" />
                   <p className="gameName">{game.name}</p>
                   <div className="reviewCircle">
@@ -58,12 +69,19 @@ function Games() {
               )
 
             })
-
           }
         </div>
-        <div className="cardBlur">
-        {selectedGame && <div className="details-modal" onClick={hideDetailsModal}><GameDetails getGames={getGames} selectedGame={selectedGame} />  </div>}
-        </div>
+
+        {selectedGame && <>
+          <div className="cardBlur" onClick={hideDetailsModal}>
+          </div>
+          
+          <div className="details-modal" ><GameDetails hideDetailsModal={hideDetailsModal} getGames={getGames} selectedGame={selectedGame} />
+          </div>
+          
+        </>
+        }
+
       </div>
 
     </>
@@ -72,3 +90,4 @@ function Games() {
 }
 
 export default Games
+

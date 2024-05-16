@@ -1,0 +1,24 @@
+
+.formColumn{
+    
+    display: flex;
+    flex-direction: row;
+    /* gap: 15vw; */
+    justify-content: space-around;
+}
+
+.editSubmit{
+   
+}
+
+.formEdit{
+    width: 100%;
+}
+
+.closeBtnForm{
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

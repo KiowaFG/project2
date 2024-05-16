@@ -16,9 +16,6 @@ const Navbar = () => {
         <Link to="/favorites">
           <li className="navbarLi">Favorites</li>
         </Link>
-        <Link to="/about-me">
-          <li className="navbarLi">My hall of fame</li>
-        </Link>
         <Link to="/addgame">
           <li className="navbarLi">Add game</li>
         </Link>
