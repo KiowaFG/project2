@@ -1,8 +1,10 @@
-import { useState, useEffect} from "react";
-import supabase from "../supabase/config";
+import supabase from "../supabase/config"
+import { useEffect, useState } from "react";
+import "./Games.css"
+import GameDetails from "./Details";
 import estrella from "../assets/estrellablanca.png"
-import yellowStar from "../assets/estrella1.png"
 
+import yellowStar from "../assets/estrella1.png"
 
 
   function Favorites() {
@@ -28,6 +30,14 @@ import yellowStar from "../assets/estrella1.png"
       }
     }
 
+    const displayDetailsModal = () => {
+
+    }
+    const hideDetailsModal = () => {
+      setSelectedGame(null)
+    }
+  
+
     useEffect(() => {
       getFavorites()
     }, [])
@@ -35,33 +45,45 @@ import yellowStar from "../assets/estrella1.png"
 
     return (
       <>
-
-       <h1>Favorites!!!!!</h1>
-
-      <div className="cardContainer">
-       {
-            games.map((game) => {
-              return (
-
-                <div key={game.id} onClick={() => {
-                  setSelectedGame(game)
-                  displayDetailsModal()
-                }
-                } className="card">
-                   <img  onClick={(e)=>handleFavorite (e,game.id, game.Favorite)} className="starImage" src={(game.Favorite) ? yellowStar : estrella} alt="" />
-                  <img className="cardImage" src={game.image_url} alt="" />
-                  <p className="gameName">{game.name}</p>
-                  <div className="reviewCircle">
-                    <p className="review">{game.user_review}</p>
+      <h1>favorites!</h1>
+        <div className="spacingNavbar">
+          <div className="cardContainer">
+            {
+              games.map((game) => {
+                return (
+  
+                  <div key={game.id} onClick={() => {
+                    setSelectedGame(game)
+                    displayDetailsModal()
+                  }
+                  } className="card">
+                    <img  onClick={(e)=>handleFavorite (e,game.id, game.Favorite)} className="starImage" src={(game.Favorite) ? yellowStar : estrella} alt="" />
+                    <img className="cardImage" src={game.image_url} alt="" />
+                    <p className="gameName">{game.name}</p>
+                    <div className="reviewCircle">
+                      <p className="review">{game.user_review}</p>
+                    </div>
+                    <img src="" alt="" />
                   </div>
-                  <img src="" alt="" />
-                </div>
-
-              )
-
-            })
+  
+                )
+  
+              })
+            }
+          </div>
+  
+          {selectedGame && <>
+            <div className="cardBlur" onClick={hideDetailsModal}>
+            </div>
+            
+            <div className="details-modal" ><GameDetails hideDetailsModal={hideDetailsModal} getGames={getGames} selectedGame={selectedGame} />
+            </div>
+            
+          </>
           }
-       </div>
+  
+        </div>
+  
       </>
     )
   }

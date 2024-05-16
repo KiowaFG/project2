@@ -42,10 +42,10 @@
     transform: translate(-50%, -50%);
     width: 50vw;
     height: 70vh;
-    background-color: #9898ff;
+    background-color: #030329;
     z-index: 33;
-    border: 3px solid white;
-    border-radius: 10px;
+    border: 10px solid white;
+    border-radius: 20px;
     
 }
 

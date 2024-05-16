@@ -7,6 +7,7 @@
     align-items: center;
     border-top:1px solid #00ddff;
     
+    
 
 }
 
@@ -36,7 +37,7 @@ justify-content: left;
 }
 
 .footer-paragraph {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
 }
 
