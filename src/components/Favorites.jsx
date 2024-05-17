@@ -62,7 +62,7 @@ import yellowStar from "../assets/estrella1.png"
                     <div className="reviewCircle">
                       <p className="review">{game.user_review}</p>
                     </div>
-                    <img src="" alt="" />
+                    <img src="" alt="" /> {/* this image is empty */}
                   </div>
   
                 )

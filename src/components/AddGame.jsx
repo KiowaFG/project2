@@ -4,6 +4,7 @@ import supabase from "../supabase/config";
 
 function AddGame() {
   const [formData, setFormData] = useState({
+    // you can avoid repeating the code by storing the initial state in a variable and then setting the state to that variable
     name: "",
     platform: "",
     release_date: "",
@@ -14,6 +15,8 @@ function AddGame() {
   });
 
   const handleChange = (e) => {
+
+    // nice work applying the spread operator to the previous state, you've adapted the lesson properly on this part
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -23,7 +26,7 @@ function AddGame() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const {data,error} = await supabase.from("games").insert([formData])
+    const {data,error} = await supabase.from("games").insert([formData]) // if data is not used, you can remove it from the destructuring
     if (error){
         console.log(error)
         return

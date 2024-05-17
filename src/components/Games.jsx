@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./Games.css"
 import GameDetails from "./Details";
 import estrella from "../assets/estrellablanca.png"
-import Favorites from "./Favorites";
+import Favorites from "./Favorites"; // you are not using this component here
 import yellowStar from "../assets/estrella1.png"
 
 

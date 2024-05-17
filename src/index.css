@@ -1,0 +1,9 @@
+/* 
+Your style handling has a good approach, creating a css for each component makes it easier to maintain and understand.
+
+I suggest you to follow the class convention by using kebab-case for class names. 
+
+In your next projects you can try to experiment with relative units like rem, em, vh, vw, etc. to make your components more responsive.
+
+Try to test your components in different screen sizes to see how they behave and if they need any adjustments.
+*/
