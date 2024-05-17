@@ -76,7 +76,7 @@ import yellowStar from "../assets/estrella1.png"
             <div className="cardBlur" onClick={hideDetailsModal}>
             </div>
             
-            <div className="details-modal" ><GameDetails hideDetailsModal={hideDetailsModal} getGames={getGames} selectedGame={selectedGame} />
+            <div className="details-modal" ><GameDetails hideDetailsModal={hideDetailsModal} getGames={getFavorites} selectedGame={selectedGame} />
             </div>
             
           </>

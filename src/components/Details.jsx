@@ -65,7 +65,11 @@ function GameDetails({ selectedGame, getGames, hideDetailsModal }) {
                             <p className="cardSummary">Summary: {selectedGame.summary}</p>
                             <div className="buttons">
                                 <button className="edit" onClick={()=>setEditMode(true)}>Edit</button>
-                                <button onClick={deleteGame} className="delete">Delete</button>
+                                <button onClick={()=>{
+                                    deleteGame ()
+                                    hideDetailsModal()
+                                    
+                                    } } className="delete">Delete</button>
                             </div>
                         </div>
                         </>
