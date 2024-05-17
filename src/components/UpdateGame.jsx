@@ -3,8 +3,8 @@ import "./AddGame.css"
 import supabase from "../supabase/config";
 import "./UpdateGame.css"
 import closeBtn from "../assets/borrar.png"
-import GameDetails from "./Details";
-import Games from "./Games";
+import GameDetails from "./Details"; // you are not using this component here
+import Games from "./Games"; // neither this one
 
 function UpdateGame({ setEditMode, selectedGame, getGames, hideDetailsModal }) {
     const [formData, setFormData] = useState({

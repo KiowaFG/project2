@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom"; // this imports are not used
 
 
 function HallOfFame() {
 
     const [games, setGames] = useState([])
     // state variable to disp[lay the details
+    // you can remove this state variable since it is not used
     const [selectedGame, setSelectedGame] = useState(null);
   
     const getGames = async () => {
@@ -19,7 +20,7 @@ function HallOfFame() {
     }
   return (
     <>
-    <div className=''></div>
+    <div className=''></div> {/* this div is empty, the component returns nothing */}
     
     </>
   )

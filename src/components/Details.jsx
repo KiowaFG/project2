@@ -31,7 +31,7 @@ function GameDetails({ selectedGame, getGames, hideDetailsModal }) {
 
     }
 
-    const updateGame = async () => {
+    const updateGame = async () => { // this function is not used
         const { error } = await supabase
             .from("games")
             .update()
