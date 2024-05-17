@@ -45,7 +45,6 @@ import yellowStar from "../assets/estrella1.png"
 
     return (
       <>
-      <h1>favorites!</h1>
         <div className="spacingNavbar">
           <div className="cardContainer">
             {
